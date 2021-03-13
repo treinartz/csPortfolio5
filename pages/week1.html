@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>MyPortfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <!--script type="text/javascript" src="libraries/p5.js"></script-->
+    <!-- optional addons for sound/dom examples -->
+    <script type="text/javascript" src="libraries/p5.sound.js"></script>
+    <script type="text/javascript" src="../javascript/p5.dom.js"></script>
+    <!-- scripts for rendering -->
+    <script src="https://toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/javascript" src="../javascript/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../javascript/render.js"></script>
+    <!-- code highlighting -->
+    <script type="text/javascript" src="../javascript/prism.js"></script>
+    <link rel="stylesheet" href="../css/prism.css" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../css/forcode.css" type="text/css" />
+
+</head>
+
+<body>
+   
+
+    <!--/menu-->
+    <h1>Week1: Draw</h1>
+    <div class="flexbox-container">
+        <div class="flexbox-item  flexbox-item-1">
+            <script type="text/p5" data-autoplay data-preview-width="400">
+                function setup() {
+  createCanvas(300, 100);
+  background(255, 0, 200);
+}
+</script>
+        </div>
+        <div class="flexbox-item  flexbox-item-2">
+            Draw:Here are some small
+            examples of how to draw things. Read and experiment with the code. Then, either try to reproduce the code or try your own by "spinning off," or "remixing" what you see here. The essence of learning is through exploration and mistakes cast as learning opportunities. </div>
+
+
+    </div>
+    <section class="ex">
+        <h2>Modular division: good for cycles</h2>
+        <section class="example_container">
+            <div class="code">
+                <pre>
+
+<code class="language-javascript">
+var x = 0;
+function setup() {
+  createCanvas(450, 450);
+}
+function draw() {
+  background(220);
+  translate(0,height/4);
+  noStroke();
+  fill(255,0,0);
+  rect(x,0, 200,200);
+  x++;
+  x = x % width;
+}
+</code>
+      </pre>
+            </div>
+        </section>
+    </section>
+
+
+    <section class="ex">
+        <h2>Elastic ball (using sin())</h2>
+        <section class="example_container">
+            <div class="code">
+                <pre>
+<code class="language-javascript">
+function setup(){
+  createCanvas(400,400);
+}
+function draw(){
+  background(255);
+  var amplitude = height/2;//play with the amplitude value 
+  var y = sin(radians(frameCount))* amplitude;
+  translate(width/2,height/2);
+  ellipse(0,y,50,50);
+}
+    </code>
+    </pre>
+            </div>
+        </section>
+        <section class="notes">
+            Notes: Here, instead of moving the ball's position linearly, we are moving up and down according to a sine wave.
+        </section>
+        <section class="challenge">
+            Challenge: Try changing the movement from up&down to side to side.
+        </section>
+    </section>
+
+
+    <script>
+        $(document).ready(function() {
+            renderCode();
+        });
+
+    </script>
+
+</body>
+</html>
